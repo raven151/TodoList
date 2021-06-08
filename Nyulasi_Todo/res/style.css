@@ -1,0 +1,54 @@
+body
+{
+    margin: 0;
+    padding: 0;
+    color: #000000;
+    background: #ffffff;
+    font-family: sans-serif, Arial, Verdana;
+    font-size: 15px;
+    line-height: 1.5;/*sorközök*/
+    
+    
+}
+ul{
+    list-style-type: none;
+}
+.Date{
+    float: left;
+    font-size: 20px;
+    font-weight: bold;
+}
+.Navigation{
+    float: right;
+    display: block;
+    list-style-type: none;
+}
+
+.Navigation li{
+    float: left;
+    
+}
+.Navigation img{
+    height: 40px;
+    width: 40px;
+}
+
+main{
+    width: 98%;
+    padding: 10px;
+}
+.tasks{
+    width: 100%;
+    
+    text-align: right;
+    border-collapse: collapse;
+    
+    
+}
+.tasks tr{
+    border-bottom: 1px solid grey;
+    padding-bottom: 3px;
+}
+
+
+
