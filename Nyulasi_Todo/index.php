@@ -91,8 +91,8 @@
                     ?>
 <script>
 function Adder() {
-  document.getElementById("AddTaskItem").innerHTML = '<tr><td style="float:left; text-align:left;">  <label for="task">Task:</label><input type="text" id="task" name="task"></td><td style="float:left; text-align:left;"><label for="Important">Important:</label><input type="checkbox" id="Important" name="Important" value="1"></td><td style="float:left; text-align:left;">  <label for="category">Category:</label><input type="text" id="category" name="category"></td><td style="float:left; text-align:left;"><button class="btn" name ="Save" onclick="Save()"><i class="fa fa-floppy-o" aria-hidden="true"></i> Save</button></td></tr>';
-}
+  document.getElementById("AddTaskItem").innerHTML = '<tr><td style="float:left; text-align:left;">  <label for="taskNew">Task:</label><input type="text" name="taskNew"></td><td style="float:left; text-align:left;"><label for="importantNew">Important:</label><input type="checkbox" name="importantNew" value="1"></td><td style="float:left; text-align:left;">  <label for="categoryNew">Category:</label><input type="text" name="categoryNew"></td><td style="float:left; text-align:left;"><button class="btn" name ="Save" onclick="Save()"><i class="fa fa-floppy-o" aria-hidden="true"></i> Save</button></td></tr>';
+};
                     
 
 </script>
@@ -100,14 +100,14 @@ function Adder() {
 <script>
     function Save(){
 <?php
-    $task = $_POST['task'];
-    if(isset($_POST['Important'])) {$imp = 1;} else{$imp = 0;}
-    $category= $_POST['category'];
+    if(isset($_POST['taskNew'])) {$taskNew = $_POST['taskNew'];} else{$taskNew = "New task";}
+    if(isset($_POST['importantNew'])) {$impNew = 1;} else{$impNew = 0;}
+    if(isset($_POST['categoryNew'])) {$categoryNew = $_POST['categoryNew'];}else{$categoryNew = "New category";}
     
-   
+    
     
     $sql = 'INSERT INTO tasks VALUES (NULL, :task, :category, :important, 0) ';
-    $values = [ 'task'=> $task, 'category'=>$category, 'important'=>$imp];
+    $values = [ 'task'=> $taskNew, 'category'=>$categoryNew, 'important'=>$impNew];
     
     $query = $db->prepare($sql);
     $query->execute($values);
