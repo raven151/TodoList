@@ -91,7 +91,7 @@
                     ?>
 <script>
 function Adder() {
-  document.getElementById("AddTaskItem").innerHTML = '<tr><td style="float:left; text-align:left;">  <label for="taskNew">Task:</label><input type="text" name="taskNew"></td><td style="float:left; text-align:left;"><label for="importantNew">Important:</label><input type="checkbox" name="importantNew" value="1"></td><td style="float:left; text-align:left;">  <label for="categoryNew">Category:</label><input type="text" name="categoryNew"></td><td style="float:left; text-align:left;"><button class="btn" name ="Save" onclick="Save()"><i class="fa fa-floppy-o" aria-hidden="true"></i> Save</button></td></tr>';
+  document.getElementById("AddTaskItem").innerHTML = '<tr><td style="float:left; text-align:left;">  <label for="taskNew">Task:</label><input type="text" value="" name="taskNew"></td><td style="float:left; text-align:left;"><label for="importantNew">Important:</label><input type="checkbox" name="importantNew" value="1"></td><td style="float:left; text-align:left;">  <label for="categoryNew">Category:</label><input type="text" value="" name="categoryNew"></td><td style="float:left; text-align:left;"><button class="btn" name ="Save" onclick="Save()"><i class="fa fa-floppy-o" aria-hidden="true"></i> Save</button></td></tr>';
 };
                     
 
@@ -100,9 +100,9 @@ function Adder() {
 <script>
     function Save(){
 <?php
-    if(isset($_POST['taskNew'])) {$taskNew = $_POST['taskNew'];} else{$taskNew = "New task";}
+    if(isset($_POST['taskNew'])) {$taskNew = $_POST['taskNew'];} else{$taskNew = "New task";}//somehow the $_POST doesn't get the text areas value.
     if(isset($_POST['importantNew'])) {$impNew = 1;} else{$impNew = 0;}
-    if(isset($_POST['categoryNew'])) {$categoryNew = $_POST['categoryNew'];}else{$categoryNew = "New category";}
+    if(isset($_POST['categoryNew'])) {$categoryNew = $_POST['categoryNew'];}else{$categoryNew = "New category";}//somehow the $_POST doesn't get the text areas value.
     
     
     
